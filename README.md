@@ -24,3 +24,13 @@ Merge the two lists in a one sorted list. The list should be made by splicing to
 Return the head of the merged linked list.
 #### [Note](https://github.com/NAT1804/daily-leetcode-coding/blob/master/Problems/Problem3.md)
 #### [Solution JS](https://github.com/NAT1804/daily-leetcode-coding/blob/master/Solutions/JavaScript/Solution3.js)
+
+## Problem 4
+### [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+You are given an array prices where prices[i] is the price of a given stock on the ith day.
+
+You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+
+Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+#### [Note](https://github.com/NAT1804/daily-leetcode-coding/blob/master/Problems/Problem4.md)
+#### [Solution JS](https://github.com/NAT1804/daily-leetcode-coding/blob/master/Solutions/JavaScript/Solution4.js)
