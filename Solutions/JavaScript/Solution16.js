@@ -19,3 +19,27 @@ var insert = function (intervals, newInterval) {
   arr.push([start, end])
   return arr
 };
+
+/**
+ * @param {number[][]} intervals
+ * @param {number[]} newInterval
+ * @return {number[][]}
+ */
+var insert2 = function (intervals, newInterval) {
+  let n = intervals.length, i = 0, res = [], [start, end] = newInterval
+  while (i < n && start > intervals[i][1]) {
+      res.push(intervals[i])
+      i++
+  }
+  while (i < n && end >= intervals[i][0]) {
+      start = Math.min(intervals[i][0], start)
+      end = Math.max(intervals[i][1], end)
+      i++
+  }
+  res.push([start, end])
+  while (i < n) {
+      res.push(intervals[i])
+      i++
+  }
+  return res
+};
