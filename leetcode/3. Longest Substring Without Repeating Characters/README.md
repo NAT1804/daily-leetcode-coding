@@ -1,0 +1,2 @@
+# [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+<code style="color: #ffc01e; background-color: #483f26; padding: 8px;border-radius: 16px;">Medium</code>
