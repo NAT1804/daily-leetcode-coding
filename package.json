@@ -1,0 +1,23 @@
+{
+  "name": "daily-leetcode-coding",
+  "version": "1.0.0",
+  "description": "Data Structure, Algorithms and Leetcode coding",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NAT1804/daily-leetcode-coding.git"
+  },
+  "keywords": [
+    "leetcode"
+  ],
+  "author": "TuanNA184",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NAT1804/daily-leetcode-coding/issues"
+  },
+  "homepage": "https://github.com/NAT1804/daily-leetcode-coding#readme"
+}
