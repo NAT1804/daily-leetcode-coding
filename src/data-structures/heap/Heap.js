@@ -1,6 +1,6 @@
 export default class Heap {
   constructor(maxSize) {
-    if (new.target) {
+    if (new.target === Heap) {
       throw new TypeError("Can't construct Heap instance directly");
     }
 
@@ -203,38 +203,3 @@ export default class Heap {
   }
 
 }
-
-const maxHeap = new Heap();
-
-// maxHeap.insert(3);
-// maxHeap.insert(10);
-// maxHeap.insert(5);
-// maxHeap.insert(6);
-// maxHeap.insert(7);
-// maxHeap.insert(4);
-// maxHeap.insert(6);
-// maxHeap.insert(8);
-// maxHeap.insert(2);
-// maxHeap.insert(1);
-
-maxHeap.insert(5);
-maxHeap.insert(3);
-maxHeap.insert(10);
-maxHeap.insert(11);
-maxHeap.insert(1);
-
-console.log(maxHeap.poll());
-
-console.log(maxHeap.toString()); // '10,3,5,1'
-
-// maxHeap.add(3);
-// maxHeap.add(10);
-// maxHeap.add(5);
-// maxHeap.add(6);
-// maxHeap.add(7);
-// maxHeap.add(4);
-// maxHeap.add(6);
-// maxHeap.add(8);
-// maxHeap.add(2);
-// maxHeap.add(1);
-// expect(maxHeap.toString()).toBe('10,8,6,7,6,4,5,3,2,1');
