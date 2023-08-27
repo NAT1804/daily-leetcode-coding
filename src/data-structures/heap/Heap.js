@@ -137,7 +137,7 @@ export default class Heap {
   }
 
   /**
-   * Insert item to last of heap
+   * Insert item to heap
    * {item}
    * return this heap
    */
@@ -151,14 +151,38 @@ export default class Heap {
     return this;
   }
 
-  remove() {
-    let lastNode = this.container[this.heapSize - 1]
-    this.heapSize--
-    this.container.unshift(this.container.pop())
+  remove(item) {
+    const foundItemIndices = this.find(item);
+    for (let i = 0; i < foundItemIndices.length; i++) {
+      const indexRemove = this.find(item).pop();
+      
+      if (indexRemove === (this.heapSize - 1)) {
+        this.container.pop()
+      } else {
+        this.container[indexRemove] = this.container.pop();
 
-    this.heapifyDown()
+        const parentNode = this.parent(indexRemove)
 
-    return lastNode
+        if (this.hasLeftChild(indexRemove) 
+          && (!parentNode || this.compare(parentNode, this.container[indexRemove]))) {
+            this.heapifyDown(indexRemove)
+        } else {
+          this.heapifyUp(indexRemove)
+        }
+
+      }
+    }
+  }
+
+  find(item) {
+    const foundItemIndices = []
+    for (let idx = 0; idx < this.container.length; idx++) {
+      if (item === this.container[idx]) {
+        foundItemIndices.push(idx);
+      }
+    }
+
+    return foundItemIndices;
   }
 
   heapifyUp(customStartIndex) {
@@ -178,15 +202,13 @@ export default class Heap {
     let nextIndex = null;
 
     while (this.hasLeftChild(currentIndex)) {
-      if (this.hasRightChild(currentIndex)) {
-        if (this.rightChild(currentIndex) > this.leftChild(currentIndex)) {
-          nextIndex = this.getRightChildIndex(currentIndex);
-        } else {
-          nextIndex = this.getLeftChildIndex(currentIndex);
-        }
+      nextIndex = this.getLeftChildIndex(currentIndex);
+
+      if (this.hasRightChild(currentIndex) && this.compare(this.rightChild(currentIndex), this.leftChild(currentIndex))) {
+        nextIndex = this.getRightChildIndex(currentIndex);
       }
 
-      if (this.container[currentIndex] > this.container[nextIndex]) {
+      if (this.compare(this.container[currentIndex], this.container[nextIndex])) {
         break;
       }
 
